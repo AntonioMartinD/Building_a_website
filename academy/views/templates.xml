@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="index">
         <title>Academy</title>
         <t t-foreach="teachers" t-as="teacher">
-            <p t-esc="teacher"></p>
+            <p>
+                <t t-esc="teacher.id" />
+                <t t-esc="teacher.name" />
+            </p>
         </t>
     </template>
 </odoo>
