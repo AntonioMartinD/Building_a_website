@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem id="academy_menu_root" name="Academy">
         <menuitem id="property_first_level_menu" name="Academy Content">

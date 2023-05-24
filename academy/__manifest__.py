@@ -5,7 +5,7 @@
     "author": "Vauxoo",
     "license": "LGPL-3",
     "version": "16.0.1.0.0",
-    "depends": ["website"],
+    "depends": ["website_sale"],
     "data": ["security/ir.model.access.csv", "data/academy_menus.xml", "views/templates.xml", "views/views.xml"],
     "demo": ["demo/demo_data.xml"],
     "application": True,

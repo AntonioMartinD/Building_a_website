@@ -30,4 +30,12 @@
             <div class="oe_structure" />
         </t>
     </template>
+    <template id="products_item" inherit_id="website_sale.products_item">
+        <xpath expr="//h6" position="after">
+            <p t-esc="product.id" />
+        </xpath>
+        <xpath expr="//h6" position="attributes">
+            <attribute name="class" add="col-md-12" separator="&#32;" />
+        </xpath>
+    </template>
 </odoo>
