@@ -3,7 +3,7 @@
     padding: 1em;
     margin: 2em 0 3em;
 
-    li{
+    li {
         display: block;
         position: relative;
         background-color: #16a085;
@@ -12,5 +12,18 @@
         text-align: center;
         margin-bottom: 1em;
         font-size: 1.5em;
+    }
+}
+
+.snippet_testimonial {
+    border: 1px solid #eaeaea;
+
+    &.opt_shadow img {
+        box-shadow: 0 2px 5px rgba(51, 51, 51, 0.4);
+    }
+
+    &.opt_grey_bg {
+        border: none;
+        background-color: #eaeaea;
     }
 }
