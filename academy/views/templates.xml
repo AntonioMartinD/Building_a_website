@@ -4,14 +4,16 @@
         <t t-call="website.layout">
             <t t-set='title'>Academy</t>
             <div class="oe_structure">
-                <div class="conainer">
+                <div class="container">
                     <t t-foreach="teachers" t-as="teacher">
-                        <p>
-                            <a t-attf-href="/academy/{{ slug(teacher) }}">
+                        <p class="rpc-container" t-att-data-teacher-id="teacher.id">
+                            <a class="rpc-button" href="#">
                                 <t t-esc="teacher.name" />
                             </a>
                         </p>
                     </t>
+                    <div class="biography">
+                    </div>
                 </div>
             </div>
         </t>

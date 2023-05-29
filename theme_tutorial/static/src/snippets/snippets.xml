@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="snippet_testimonial" name="Testimonial Snippet">
         <section class="snippet_testimonial">
@@ -25,7 +25,10 @@
     </template>
     <template id="external_snippets" inherit_id="website.snippets">
         <xpath expr="//div[@id='snippet_structure']//t[@t-snippet][last()]" position="after">
-            <t t-snippet="theme_tutorial.snippet_testimonial" t-thumbnail="/theme_tutorial/static/src/img/testimonial.png" />
+            <t
+                t-snippet="theme_tutorial.snippet_testimonial"
+                t-thumbnail="/theme_tutorial/static/src/img/testimonial.png"
+            />
         </xpath>
     </template>
 </odoo>
