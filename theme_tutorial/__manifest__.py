@@ -8,13 +8,13 @@
     "depends": ["website"],
     "data": [
         "data/images.xml",
-        "views/layout.xml",
-        "views/pages.xml",
-        "static/src/snippets/snippets.xml",
-        "static/src/snippets/options.xml",
+        "views/templates/layout.xml",
+        "views/pages/pages.xml",
+        "views/snippets/snippets.xml",
+        "views/snippets/options.xml",
     ],
     "assets": {
-        "web.assets_frontend": ["theme_tutorial/static/src/scss/style.scss"],
+        "web.assets_frontend": ["theme_tutorial/static/src/scss/main.scss"],
         "web.assets_editor": ["theme_tutorial/static/src/js/tutorial_editor.js"],
     },
     "installable": True,

@@ -7,7 +7,7 @@
     "version": "16.0.1.0.0",
     "depends": ["website_sale"],
     "data": ["security/ir.model.access.csv", "data/academy_menus.xml", "views/templates.xml", "views/views.xml"],
-    "demo": ["demo/demo_data.xml"],
+    "demo": ["demo/academy_teacher_demo.xml"],
     "assets": {
         "web.assets_frontend": [
             "academy/static/src/js/animal.js",

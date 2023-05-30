@@ -1,53 +1,33 @@
-odoo.define('academy.demo_rpc', function (require) {
-    'use strict';
+odoo.define("academy.demo_rpc", function (require) {
+    "use strict";
 
-    var core = require('web.core');
-    var Widget = require('web.Widget');
-    var rpc = require('web.rpc');
-    require('web.dom_ready');
+    var core = require("web.core");
+    var publicWidget = require("web.public.widget");
+    require("web.dom_ready");
 
-    var RpcButton = Widget.extend({
+    publicWidget.registry.RpcButton = publicWidget.Widget.extend({
+        selector: ".rpc-container",
+
         events: {
-            'click .rpc-button': 'onClick'
+            "click .rpc-button": "onClick",
         },
 
-        init: function (parent, options) {
-            this._super.apply(this, arguments);
-            this.options = _.extend(options || {}, {});
+        onClick: function (ev) {
+            console.log("Clicked");
+            this._rpc({
+                model: "academy.teacher",
+                method: "search_read",
+                args: [[["id", "=", this.$el.data("teacher-id")]], ["biography"]],
+            }).then(function (data) {
+                if (data.length) {
+                    $(".biography").html(data[0].biography);
+                }
+            });
         },
-
-        onClick : function(ev){
-            console.log('Clicked');
-            //this commented code is her because is an other example to get data
-            // rpc.query({
-            //     route: '/academy/search_teacher',
-            //     params:{
-            //         teacher_id: this.$el.data('teacher-id')
-            //     }
-            // }).then(function(teachers_found){
-            //     console.log(teachers_found)
-            // });
-             rpc.query({
-                 model: 'academy.teachers',
-                 method: 'search_read',
-                 args: [[['id' ,'=', this.$el.data('teacher-id')]], ['biography']]
-             }).then(function(data){
-                 if(data.length){
-                     $('.biography').html(data[0].biography);
-                 }
-             });
-        }
     });
 
-    if(!$('.rpc-container').length){
-        return $.Deferred().reject('DOM odes not contain .rpc-container');
-    }
+    var RpcButton = new publicWidget.registry.RpcButton(this);
+    RpcButton.appendTo($(".rpc-container"));
 
-    $('.rpc-container').each(function(idx){
-        var $elem = $(this);
-        var button = new RpcButton(null, $elem.data());
-        button.attachTo($elem);
-    })
-
-    return RpcButton;
-})
+    return publicWidget.registry.RpcButton;
+});

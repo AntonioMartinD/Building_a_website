@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="padilla" model="academy.teachers">
+    <record id="diana_padilla" model="academy.teacher">
         <field name="name">Diana Padilla</field>
     </record>
-    <record id="caroll" model="academy.teachers">
+    <record id="jody_caroll" model="academy.teacher">
         <field name="name">Jody Caroll</field>
     </record>
-    <record id="vaughn" model="academy.teachers">
+    <record id="lester_vaughn" model="academy.teacher">
         <field name="name">Lester Vaughn</field>
     </record>
 </odoo>

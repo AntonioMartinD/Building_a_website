@@ -1,4 +1,5 @@
 from odoo import http
+from odoo.http import request
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
@@ -6,20 +7,20 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 class Academy(http.Controller):
     @http.route("/academy/academy/", auth="public", website=True)
     def index(self, **kw):
-        teachers = http.request.env["academy.teachers"]
-        return http.request.render("academy.index", {"teachers": teachers.search([])})
+        teachers = request.env["academy.teacher"]
+        return request.render("academy.index", {"teachers": teachers.search([])})
 
     @http.route("/academy/<name>", auth="public", website=True)
     def teacher(self, name):
         return "<h1>{}<h1>".format(name)
 
-    @http.route("/academy/<model('academy.teachers'):teacher>", auth="public", website=True)
+    @http.route("/academy/<model('academy.teacher'):teacher>", auth="public", website=True)
     def obj_teacher(self, teacher):
-        return http.request.render("academy.biography", {"person": teacher})
+        return request.render("academy.biography", {"teacher": teacher})
 
     @http.route("/academy/search_teacher", type="json", auth="public", website=True)
     def search_teacher(self, **args):
-        teacher_obj = http.request.env["academy.teachers"]
+        teacher_obj = request.env["academy.teacher"]
         teachers = teacher_obj.search_read([("id", "=", args.get("teacher_id", False))], fields=["biography"])
         return teachers
 
@@ -30,6 +31,6 @@ class WebsiteSaleInh(WebsiteSale):
         res = super().shop(
             page=page, category=category, search=search, min_price=min_price, max_price=max_price, ppg=ppg, **post
         )
-        res.qcontext["categories"] = res.qcontext["categories"].sorted(key=lambda r: r.name)
+        res.qcontext["categories"] = res.qcontext["categories"].sorted("name")
         res.qcontext["search"] = "ipad"
         return res

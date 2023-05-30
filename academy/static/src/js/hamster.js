@@ -1,18 +1,17 @@
-odoo.define('academy.hamster', function(require){
-
-    var Animal = require('academy.animal');
+odoo.define("academy.hamster", function (require) {
+    var animal = require("academy.animal");
 
     var DanceMixin = {
-        dance: function(){
-            console.log('Dancing...');
-        }
+        dance: function () {
+            console.log("Dancing...");
+        },
     };
 
-    var Hamster = Animal.extend(DanceMixin,{
-        sleep: function (){
-            console.log('Sleeping...');
-        }
-    })
+    var Hamster = animal.extend(DanceMixin, {
+        sleep: function () {
+            console.log("Sleeping...");
+        },
+    });
 
     var hamster = new Hamster();
 

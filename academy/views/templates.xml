@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="index">
+    <template id="index" name="index">
         <t t-call="website.layout">
             <t t-set='title'>Academy</t>
             <div class="oe_structure">
@@ -12,32 +12,31 @@
                             </a>
                         </p>
                     </t>
-                    <div class="biography">
-                    </div>
+                    <div class="biography" />
                 </div>
             </div>
         </t>
     </template>
-    <template id="biography">
+    <template id="biography" name="biography">
         <t t-call="website.layout">
             <t t-set='title'>Academy</t>
-            <div class="oe_structure" />
-            <div class="oe_structure">
-                <div class="container">
-                    <h3 t-field="person.name" />
-                    <p>Last modified: <i t-field="person.write_date" t-options="{'widget' : 'relative'}" /></p>
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="oe_structure">
+                    <div class="container">
+                        <h3 t-field="teacher.name" />
+                        <p>Last modified: <i t-field="teacher.write_date" t-options="{'widget' : 'relative'}" /></p>
+                    </div>
+                    <div t-field="teacher.biography" />
                 </div>
-                <div t-field="person.biography" />
             </div>
-            <div class="oe_structure" />
         </t>
     </template>
-    <template id="products_item" inherit_id="website_sale.products_item">
-        <xpath expr="//h6" position="after">
+    <template id="products_item" name="product_items" inherit_id="website_sale.products_item">
+        <xpath expr="//h6[hasclass('o_wsale_products_item_title')]" position="after">
             <p t-esc="product.id" />
         </xpath>
-        <xpath expr="//h6" position="attributes">
-            <attribute name="class" add="col-md-12" separator="&#32;" />
+        <xpath expr="//h6[hasclass('o_wsale_products_item_title')]" position="attributes">
+            <attribute name="class" add="col-md-12" separator=" " />
         </xpath>
     </template>
 </odoo>

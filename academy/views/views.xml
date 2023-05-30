@@ -2,11 +2,11 @@
 <odoo>
     <record id="action_academy_teachers" model="ir.actions.act_window">
         <field name="name">Academy Teachers</field>
-        <field name="res_model">academy.teachers</field>
+        <field name="res_model">academy.teacher</field>
     </record>
     <record id="academy_teacher_form" model="ir.ui.view">
-        <field name="name">academy.teachers.form</field>
-        <field name="model">academy.teachers</field>
+        <field name="name">academy.teacher.form</field>
+        <field name="model">academy.teacher</field>
         <field name="arch" type="xml">
             <form action="">
                 <sheet>

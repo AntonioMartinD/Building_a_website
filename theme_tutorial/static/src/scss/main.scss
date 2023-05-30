@@ -19,7 +19,7 @@
     border: 1px solid #eaeaea;
 
     &.opt_shadow img {
-        box-shadow: 0 2px 5px rgba(51, 51, 51, 0.4);
+        @extend .shadow;
     }
 
     &.opt_grey_bg {
