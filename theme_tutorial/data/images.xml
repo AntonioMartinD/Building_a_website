@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="img_client" model="ir.attachment">
+        <field name="name">Client Image</field>
+        <field name="datas" type="base64" file="theme_tutorial/static/src/img/client.png" />
+        <field name="res_model">ir.ui.view</field>
+        <field name="public" eval="True" />
+    </record>
+</odoo>

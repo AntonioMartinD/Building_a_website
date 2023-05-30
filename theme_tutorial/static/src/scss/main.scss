@@ -1,0 +1,29 @@
+.services {
+    background-color: #eaeaea;
+    padding: 1em;
+    margin: 2em 0 3em;
+
+    li {
+        display: block;
+        position: relative;
+        background-color: #16a085;
+        color: #fff;
+        padding: 2em;
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 1.5em;
+    }
+}
+
+.snippet_testimonial {
+    border: 1px solid #eaeaea;
+
+    &.opt_shadow img {
+        @extend .shadow;
+    }
+
+    &.opt_grey_bg {
+        border: none;
+        background-color: #eaeaea;
+    }
+}

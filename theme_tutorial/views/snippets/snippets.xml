@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="snippet_testimonial" name="Testimonial Snippet">
+        <section class="snippet_testimonial">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/website/image/theme_tutorial.img_client/150x150" alt="client" class="img-circle" />
+                        <h3>Client Name</h3>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/website/image/theme_tutorial.img_client/150x150" alt="client" class="img-circle" />
+                        <h3>Client Name</h3>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/website/image/theme_tutorial.img_client/150x150" alt="client" class="img-circle" />
+                        <h3>Client Name</h3>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="external_snippets" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_structure']//t[@t-snippet][last()]" position="after">
+            <t
+                t-snippet="theme_tutorial.snippet_testimonial"
+                t-thumbnail="/theme_tutorial/static/src/img/testimonial.png"
+            />
+        </xpath>
+    </template>
+</odoo>

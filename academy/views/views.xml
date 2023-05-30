@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_academy_teachers" model="ir.actions.act_window">
+        <field name="name">Academy Teachers</field>
+        <field name="res_model">academy.teacher</field>
+    </record>
+    <record id="academy_teacher_form" model="ir.ui.view">
+        <field name="name">academy.teacher.form</field>
+        <field name="model">academy.teacher</field>
+        <field name="arch" type="xml">
+            <form action="">
+                <sheet>
+                    <label for="name" />
+                    <field name="name" />
+                    <label for="biography" />
+                    <field name="biography" widget="html" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
